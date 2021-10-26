@@ -1,0 +1,37 @@
+header{
+  font-family: Arial;
+}
+
+.container{
+  max-width: 966px;
+}
+
+.bg-wykop{
+  background-color: #4383af;
+}
+
+.login, .add, .search{
+  color: #fff;
+  line-height: 27px;
+  font-size: 13px;
+  font-weight: bold;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.add:hover{
+  opacity: 0.6;
+  border-bottom: 2px solid #fff;
+}
+.login:hover{
+  opacity: 0.6;
+  border-bottom: 2px solid #fff;
+}
+.search:hover{
+  opacity: 0.6;
+  border-bottom: 2px solid #fff;
+}
+
+
+
+

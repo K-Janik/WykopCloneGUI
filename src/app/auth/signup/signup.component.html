@@ -1,0 +1,49 @@
+<body>
+<div class="register-section">
+  <div class="row justify-content-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div class="card-header">
+        Zarejestruj się
+      </div>
+      <div class="card">
+        <span id="signup title">Załóż konto na wykop.pl</span>
+        <div class="card-body">
+          <form [formGroup]="signupForm" (ngSubmit)="signup()">
+
+            <div class="form-group row">
+                <input type="text" [formControlName]="'username'" id="username" class="form-control" placeholder="login">
+              <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
+                Wprowadź poprawny login
+              </span>
+            </div>
+
+            <div class="form-group row">
+                <input type="password" [formControlName]="'password'" id="password" class="form-control" name="password" placeholder="hasło">
+              <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+                Wprowadź poprawne hasło
+              </span>
+            </div>
+
+            <div class="form-group row">
+                <input type="text" [formControlName]="'email'" id="email_address" class="form-control" name="email-address" placeholder="email">
+              <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+                Wprowadź poprawny email
+              </span>
+            </div>
+
+            <span class="col-md-6">
+                            <button type="submit" class="sign-up">
+                                Zarejestruj się
+                            </button>
+            </span>
+            <br>
+                            <span style="margin: auto; display:table; font-size: 11px">Masz już konto? <a routerLink="/login">Zaloguj się</a></span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+</body>

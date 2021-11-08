@@ -1,0 +1,35 @@
+.counter{
+  color: #ff5917;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.border{
+  background-color: white;
+}
+
+hr{
+  color: dimgrey;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+.title{
+  font-size: 11px;
+  color: #788DA2;
+  font-weight: bold;
+  padding: 6px 0px 6px 6px;
+}
+
+.postname{
+  font-size: 16px;
+  color: #4383af;
+  margin-left: 6px;
+  margin-right: 6px;
+  /*font-weight: 500;*/
+}
+
+.top-margin{
+  margin-top: 0px;
+}
+

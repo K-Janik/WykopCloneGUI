@@ -1,0 +1,31 @@
+<!-- Display Posts-->
+<div class="row post, border border-2, rounded" *ngFor="let post of posts">
+  <div class="col-md-2">
+  <!-- Section to Display Votes-->
+  <app-vote-button [post]="post"></app-vote-button>
+  <!-- Section to Display Post Information-->
+  </div>
+  <div class="col-md-10">
+    <div class="post-title">
+      <a class="postname" href="{{post.url}}">{{post.postName}}</a>
+    </div>
+            <span class="tag-info">
+              <span>@<a class="username" routerLink="/user/{{post.userName}}">{{post.userName}}</a></span>
+              <span class="tag-text"> #<a class="posturl" routerLink="">{{post.tagName}}</a></span>
+            </span>
+    <div>
+      <p class="post-text">{{post.description}}</p>
+    </div>
+    <span>
+              <a class="btnCommments" role="button">
+                <fa-icon [icon]="faComments"></fa-icon>
+                Komentarze({{post.commentCount}})
+              </a>
+      <span class="duration">  opublikowany {{post.duration}}</span>
+              <button class="login" (click)="goToPost(post.id)">
+                Read Post
+              </button>
+            </span>
+  </div>
+</div>
+

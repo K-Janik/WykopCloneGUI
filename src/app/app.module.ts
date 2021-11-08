@@ -13,6 +13,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { HomeComponent } from './home/home.component';
 import {TokenInterceptor} from "./token-interceptor";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { PostTileComponent } from './shared/post-tile/post-tile.component';
+import { VoteButtonComponent } from './shared/vote-button/vote-button.component';
+import { PostSideBarComponent } from './shared/post-side-bar/post-side-bar.component';
+import { CreateTagComponent } from './tag/create-tag/create-tag.component';
+import { CreatePostComponent } from './post/create-post/create-post.component';
+import { ListTagsComponent } from './tag/list-tags/list-tags.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,13 @@ import {TokenInterceptor} from "./token-interceptor";
     HeaderComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    PostTileComponent,
+    VoteButtonComponent,
+    PostSideBarComponent,
+    CreateTagComponent,
+    CreatePostComponent,
+    ListTagsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +43,7 @@ import {TokenInterceptor} from "./token-interceptor";
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [
     {

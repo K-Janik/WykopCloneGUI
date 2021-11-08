@@ -10,8 +10,17 @@ header{
   background-color: #4383af;
 }
 
-.login, .add, .search{
+.login, .dropdown-toggle, .search{
   color: #fff;
+  line-height: 27px;
+  font-size: 13px;
+  font-weight: bold;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.add{
+  color: #4383af;
   line-height: 27px;
   font-size: 13px;
   font-weight: bold;
@@ -21,13 +30,18 @@ header{
 
 .add:hover{
   opacity: 0.6;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #4383af;
 }
 .login:hover{
   opacity: 0.6;
   border-bottom: 2px solid #fff;
 }
 .search:hover{
+  opacity: 0.6;
+  border-bottom: 2px solid #fff;
+}
+
+.dropdown-toggle:hover{
   opacity: 0.6;
   border-bottom: 2px solid #fff;
 }

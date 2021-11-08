@@ -1,0 +1,40 @@
+.border{
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+.postname{
+  font-size: 18px;
+  font-weight: 600;
+  color: #4383af;
+  text-decoration: none;
+}
+
+.username{
+  color: #BB0000;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.posturl{
+  color: #4383af;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.duration{
+  font-size: 13px;
+}
+
+.btnCommments{
+  color: #4383af;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.post-text{
+  font-size: 15px;
+}
+.col-md-1{}
+
+

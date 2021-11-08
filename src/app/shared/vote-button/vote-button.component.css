@@ -1,0 +1,24 @@
+.upvote{
+  color: #3b915f;
+}
+
+.downvote{
+  color: #c0392b;
+}
+
+.square{
+  color: #4383af;
+  height: 50px;
+}
+
+.counter{
+  color: #ff5917;
+  font-weight: bold;
+  text-align: center;
+}
+
+.p-2{
+  text-align: center;
+}
+
+

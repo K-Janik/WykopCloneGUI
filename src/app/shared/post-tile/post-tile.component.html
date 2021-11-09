@@ -14,7 +14,7 @@
               <span class="tag-text"> #<a class="posturl" routerLink="">{{post.tagName}}</a></span>
             </span>
     <div>
-      <p class="post-text">{{post.description}}</p>
+      <p class="post-text" [innerHTML]="post.description"></p>
     </div>
     <span>
               <a class="btnCommments" role="button">

@@ -4,7 +4,7 @@
     <div class="create-tag-container">
       <form class="post-form" [formGroup]="createTagForm" (ngSubmit)="createTag()">
         <div class="form-group">
-          <div class="create-tag-heading">Create Tag</div>
+          <div class="create-tag-heading">Dodaj Tag</div>
           <hr />
           <input type="text" [formControlName]="'title'" class="form-control" style="margin-top: 5px"
                  placeholder="Tag">
@@ -12,8 +12,8 @@
                     placeholder="Opis"></textarea>
           <div>
             <div style="margin-top: 5px" class="float-right">
-              <button (click)="discard()" class="btnDiscard">Discard</button>
-              <button class="btnCreateTag">Create</button>
+              <button (click)="discard()" class="btnDiscard">Cofnij</button>
+              <button class="btnCreateTag">Zapisz</button>
             </div>
           </div>
         </div>

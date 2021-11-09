@@ -20,6 +20,7 @@ import { PostSideBarComponent } from './shared/post-side-bar/post-side-bar.compo
 import { CreateTagComponent } from './tag/create-tag/create-tag.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ListTagsComponent } from './tag/list-tags/list-tags.component';
+import {EditorModule} from "@tinymce/tinymce-angular";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ListTagsComponent } from './tag/list-tags/list-tags.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FontAwesomeModule,
+    EditorModule,
   ],
   providers: [
     {

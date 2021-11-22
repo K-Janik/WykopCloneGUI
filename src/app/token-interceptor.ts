@@ -1,7 +1,7 @@
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {BehaviorSubject, Observable, throwError} from "rxjs";
 import {AuthService} from "./auth/shared/auth.service";
-import {catchError, switchMap} from "rxjs/operators";
+import {catchError, filter, switchMap, take} from "rxjs/operators";
 import {Injectable} from "@angular/core";
 import {LoginResponse} from "./auth/login/login-response";
 
@@ -16,41 +16,41 @@ export class TokenInterceptor implements HttpInterceptor{
   constructor(public authService: AuthService) {
   }
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (this.authService.getJwtToken()) {
-      this.addToken(req, this.authService.getJwtToken());
-    }
-
-    return next.handle(req).pipe(catchError(error => {
-      if (error instanceof HttpErrorResponse && error.status === 403) {
-        return this.handleAuthErrors(req, next);
-      } else {
-        return  throwError(error);
-      }
-    }));
-  }
-
-  // intercept(req: HttpRequest<any>, next: HttpHandler):
-  //   Observable<HttpEvent<any>> {
-  //
-  //   if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
-  //     return next.handle(req);
+  // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  //   if (this.authService.getJwtToken()) {
+  //     this.addToken(req, this.authService.getJwtToken());
   //   }
-  //   const jwtToken = this.authService.getJwtToken();
   //
-  //   if (jwtToken) {
-  //     return next.handle(this.addToken(req, jwtToken)).pipe(catchError(error => {
-  //       if (error instanceof HttpErrorResponse
-  //         && error.status === 403) {
-  //         return this.handleAuthErrors(req, next);
-  //       } else {
-  //         return throwError(error);
-  //       }
-  //     }));
-  //   }
-  //   return next.handle(req);
-  //
+  //   return next.handle(req).pipe(catchError(error => {
+  //     if (error instanceof HttpErrorResponse && error.status === 403) {
+  //       return this.handleAuthErrors(req, next);
+  //     } else {
+  //       return  throwError(error);
+  //     }
+  //   }));
   // }
+
+  intercept(req: HttpRequest<any>, next: HttpHandler):
+    Observable<HttpEvent<any>> {
+
+    if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
+      return next.handle(req);
+    }
+    const jwtToken = this.authService.getJwtToken();
+
+    if (jwtToken) {
+      return next.handle(this.addToken(req, jwtToken)).pipe(catchError(error => {
+        if (error instanceof HttpErrorResponse
+          && error.status === 403) {
+          return this.handleAuthErrors(req, next);
+        } else {
+          return throwError(error);
+        }
+      }));
+    }
+    return next.handle(req);
+
+  }
 
   private handleAuthErrors(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (!this.isTokenRefreshing) {
@@ -63,6 +63,14 @@ export class TokenInterceptor implements HttpInterceptor{
         return next.handle(this.addToken(req, refreshTokenResponse.authenticationToken));
       })
       )
+    } else {
+      return this.refreshTokenSubject.pipe(
+        filter(result =>result !== null),
+        take(1),
+        switchMap((res)=> {
+          return next.handle(this.addToken(req, this.authService.getJwtToken()))
+        })
+      );
     }
   }
 

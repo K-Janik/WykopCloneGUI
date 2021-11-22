@@ -53,5 +53,9 @@ export class AuthService {
   getUsername() {
     return this.localStorage.retrieve('username');
   }
+
+  isLoggedIn(): boolean {
+    return this.getJwtToken() != null;
+  }
 }
 

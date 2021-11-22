@@ -6,6 +6,8 @@ import {HomeComponent} from "./home/home.component";
 import {CreatePostComponent} from "./post/create-post/create-post.component";
 import {CreateTagComponent} from "./tag/create-tag/create-tag.component";
 import {ListTagsComponent} from "./tag/list-tags/list-tags.component";
+import {ViewPostComponent} from "./post/view-post/view-post.component";
+import {UserProfileComponent} from "./auth/user-profile/user-profile.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,7 +15,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'create-post', component: CreatePostComponent},
   {path: 'create-tag', component: CreateTagComponent},
-  {path: 'list-tags', component: ListTagsComponent}
+  {path: 'list-tags', component: ListTagsComponent},
+  {path: 'view-post/:id', component: ViewPostComponent},
+  {path: 'user-profile/:name', component: UserProfileComponent}
 ];
 
 @NgModule({

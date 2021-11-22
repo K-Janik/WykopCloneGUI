@@ -9,16 +9,26 @@
       <a routerLink="/search" class="nav-link search">Szukaj</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAdd" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Dodaj
         </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdd">
           <li><a routerLink="/create-post" class="nav-link add">Dodaj Post</a><hr/></li>
           <li><a routerLink="/create-tag" class="nav-link add">Dodaj Tag</a></li>
         </ul>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isLoggedIn">
       <a routerLink="/login" class="nav-link login">Zaloguj się</a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isLoggedIn">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <fa-icon class="user" size="2x" [icon]="faUser"></fa-icon>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<!--          <li><a (click)="goToUserProfile()" class="nav-link add">{{username}}</a><hr/></li>-->
+          <li><a routerLink="/user-profile/{{username}}" class="nav-link add">{{username}}</a><hr/></li>
+          <li><a (click)="logout()" class="nav-link add">wyloguj</a></li>
+        </ul>
       </li>
     </ul>
     </div>

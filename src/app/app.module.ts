@@ -21,6 +21,8 @@ import { CreateTagComponent } from './tag/create-tag/create-tag.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ListTagsComponent } from './tag/list-tags/list-tags.component';
 import {EditorModule} from "@tinymce/tinymce-angular";
+import { ViewPostComponent } from './post/view-post/view-post.component';
+import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {EditorModule} from "@tinymce/tinymce-angular";
     PostSideBarComponent,
     CreateTagComponent,
     CreatePostComponent,
-    ListTagsComponent
+    ListTagsComponent,
+    ViewPostComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

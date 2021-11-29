@@ -1,0 +1,71 @@
+.container{
+  max-width: 966px;
+}
+body{
+  margin-top: 63px;
+  font-family: Arial;
+}
+.border{
+  margin-bottom: 5px;
+  background-color: white;
+}
+.postname{
+  font-size: 18px;
+  font-weight: 600;
+  color: #4383af;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.username{
+  color: #BB0000;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.username-comment {
+  color: #ff5917;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.duration {
+  font-size: 13px;
+  color: #4383af;
+}
+
+.posturl{
+  color: #4383af;
+  font-size: 13px;
+  text-decoration: none;
+}
+.btnCommments{
+  color: #2c3e50;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.post-text{
+  font-size: 15px;
+}
+
+.add {
+  background-color: #4383af;
+  border-color: #4383af;
+  float: right;
+}
+
+hr {
+  color: #878A8C;
+  margin: 0px 0px 0px 0px;
+}
+
+.comment-text {
+  font-size: 13px;
+}
+
+
+

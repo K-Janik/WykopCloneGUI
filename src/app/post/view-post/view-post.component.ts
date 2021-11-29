@@ -19,6 +19,7 @@ export class ViewPostComponent implements OnInit {
   commentForm: FormGroup;
   commentPayload: CommentPayload;
   comments: CommentPayload[];
+  side: Array<PostModel> = [];
 
   constructor(private postService: PostService, private activateRoute: ActivatedRoute,
               private commentService: CommentService, private router: Router) {
@@ -31,6 +32,11 @@ export class ViewPostComponent implements OnInit {
       text: '',
       postId: this.postId
     };
+  }
+
+  ngOnInit(): void {
+    this.getPosById();
+    this.getCommentsForPost();
   }
 
   private getPosById(){
@@ -49,11 +55,6 @@ export class ViewPostComponent implements OnInit {
     }, error => {
       throwError(error);
     });
-  }
-
-  ngOnInit(): void {
-    this.getPosById();
-    this.getCommentsForPost();
   }
 
   private getCommentsForPost() {

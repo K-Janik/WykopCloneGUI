@@ -1,46 +1,93 @@
 <div class="container">
   <div class="row">
-    <hr />
-    <div class="col-md-9">
-      <div class="row post">
-        <div class="col-md-1">
+    <div class="col-md-8">
+      <div class="row post, border border-2, rounded">
+        <div class="col-md-2">
           <app-vote-button [post]="post"></app-vote-button>
         </div>
-        <div class="col-md-11">
-          <span>
-            <span class="tag-text"><a class="post-url" href="">{{post.tagName}}</a></span>
-            <span> . Posted
-                <span> {{post.duration}} </span>
-                by
-              <a *ngIf="post.userName === null" class="username" href="">Anonymous</a>
-              <a *ngIf="post.userName != null" class="username" href="">{{post.userName}}</a>
+        <div class="col-md-10">
+          <div class="view-post">
+            <a class="postname" href="{{post.url}}">{{post.postName}}</a>
+          </div>
+          <span class="tag-info">
+              <span>@<a class="username" routerLink="/user/{{post.userName}}">{{post.userName}}</a></span>
+              <span class="tag-text"> #<a class="posturl" routerLink="">{{post.tagName}}</a></span>
             </span>
-          </span>
-          <hr />
-          <a routerLink="post.url" class="post-title">{{post.postName}}</a>
           <div>
-            <p class="post-text" [innerHtml]="post.description"></p>
+            <p class="post-text"  [innerHTML]="post.description"></p>
           </div>
-          <div class="post-comment">
-            <form [formGroup]="commentForm" (ngSubmit)="postComment()">
-              <div class="form-group">
-                <textarea class="form-control" [formControlName]="'text'" placeholder="Your Thoughts?"></textarea>
-              </div>
-              <button type="submit" class="login float-right">Comment</button>
-            </form>
-          </div>
-          <div style="margin-top: 60px;" *ngFor="let comment of comments">
-            <div class="comment">
-              <div class="username">
-                <a routerLink="/user/comment.username">{{comment.userName}}</a>
-              </div>
-              <div>
-                <p>{{comment.duration}}</p>
-              </div>
-              <b>{{comment.text}}</b>
-            </div>
+          <span>
+              <a class="btnCommments">
+                Komentarze({{post.commentCount}}) :
+              </a>
+            </span>
         </div>
       </div>
+        <div class="row post, border border-2, rounded" *ngFor="let comment of comments">
+          <div class="comment">
+              <a class="username-comment">{{comment.userName}}</a>
+              <span class="duration">  {{comment.createdDate}}</span>
+              <hr/>
+            <span class="comment-text">{{comment.text}}</span>
+          </div>
+        </div>
+      <div class="post-comment">
+        <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+          <div class="form-group">
+            <textarea class="form-control" [formControlName]="'text'" placeholder="Dodaj komentarz"></textarea>
+          </div>
+          <button type="submit" class="add btn btn-primary btn-sm">Wyślij</button>
+        </form>
+      </div>
     </div>
+      <div class="col-md-3">
+        <app-post-side-bar [sides]="side"></app-post-side-bar>
+      </div>
   </div>
-</div>
+
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <hr />-->
+<!--      <div class="col-md-9">-->
+<!--        <div class="row post">-->
+<!--          <div class="col-md-1">-->
+<!--            <app-vote-button [post]="post"></app-vote-button>-->
+<!--          </div>-->
+<!--          <div class="col-md-11">-->
+<!--          <span>-->
+<!--            <span class="tag-text"><a class="post-url" href="">{{post.tagName}}</a></span>-->
+<!--            <span> . Posted-->
+<!--                <span> {{post.duration}} </span>-->
+<!--                by-->
+<!--              <a *ngIf="post.userName === null" class="username" href="">Anonymous</a>-->
+<!--              <a *ngIf="post.userName != null" class="username" href="">{{post.userName}}</a>-->
+<!--            </span>-->
+<!--          </span>-->
+<!--            <hr />-->
+<!--            <a routerLink="post.url" class="post-title">{{post.postName}}</a>-->
+<!--            <div>-->
+<!--              <p class="post-text" [innerHtml]="post.description"></p>-->
+<!--            </div>-->
+<!--            <div class="post-comment">-->
+<!--              <form [formGroup]="commentForm" (ngSubmit)="postComment()">-->
+<!--                <div class="form-group">-->
+<!--                  <textarea class="form-control" [formControlName]="'text'" placeholder="Your Thoughts?"></textarea>-->
+<!--                </div>-->
+<!--                <button type="submit" class="login float-right">Comment</button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--            <div style="margin-top: 60px;" *ngFor="let comment of comments">-->
+<!--              <div class="comment">-->
+<!--                <div class="username">-->
+<!--                  <a routerLink="/user/comment.username">{{comment.username}}</a>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                  <p>{{comment.duration}}</p>-->
+<!--                </div>-->
+<!--                <b>{{comment.text}}</b>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->

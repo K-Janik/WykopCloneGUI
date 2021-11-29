@@ -8,6 +8,7 @@
   font-weight: 600;
   color: #4383af;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .username{
@@ -16,7 +17,7 @@
   text-decoration: none;
 }
 
-.posturl{
+.tagname{
   color: #4383af;
   font-size: 13px;
   text-decoration: none;
@@ -34,6 +35,7 @@
 
 .post-text{
   font-size: 15px;
+  cursor: pointer;
 }
 .col-md-1{}
 

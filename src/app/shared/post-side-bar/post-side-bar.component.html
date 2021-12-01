@@ -1,7 +1,7 @@
 <div class="sidebar-view-post, border border-2, rounded">
 <div class="title">OSTATNIO POPULARNE</div>
   <hr class="top-margin" />
-  <span class="row post" *ngFor="let post of sides">
+  <span class="row post" *ngFor="let post of sides | orderBy: 'voteCount' :'desc'">
       <span class="postname">{{post.postName}} </span>
       <span class="counter">{{post.voteCount}}</span>
       <span><hr /></span>

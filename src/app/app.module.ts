@@ -23,6 +23,7 @@ import { ListTagsComponent } from './tag/list-tags/list-tags.component';
 import {EditorModule} from "@tinymce/tinymce-angular";
 import { ViewPostComponent } from './post/view-post/view-post.component';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import {OrderByPipe} from "./shared/post-side-bar/orderby.pipe";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
     CreatePostComponent,
     ListTagsComponent,
     ViewPostComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

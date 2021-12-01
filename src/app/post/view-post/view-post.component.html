@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-9">
       <div class="row post, border border-2, rounded">
         <div class="col-md-2">
           <app-vote-button [post]="post"></app-vote-button>
@@ -31,7 +31,7 @@
             <span class="comment-text">{{comment.text}}</span>
           </div>
         </div>
-      <div class="post-comment">
+      <div class="post-comment" *ngIf="isLoggedIn">
         <form [formGroup]="commentForm" (ngSubmit)="postComment()">
           <div class="form-group">
             <textarea class="form-control" [formControlName]="'text'" placeholder="Dodaj komentarz"></textarea>

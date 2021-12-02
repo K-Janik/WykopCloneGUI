@@ -1,0 +1,22 @@
+.border{
+  margin-bottom: 5px;
+  background-color: white;
+}
+.username-comment {
+  color: #ff5917;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+}
+.duration {
+  font-size: 13px;
+  color: #4383af;
+}
+hr {
+  color: #878A8C;
+  margin: 0px 0px 0px 0px;
+}
+
+.comment-text {
+  font-size: 13px;
+}

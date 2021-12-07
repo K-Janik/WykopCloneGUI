@@ -1,0 +1,73 @@
+.container{
+  font-family: Arial;
+}
+.create-post-container{
+  margin-top: 10px;
+  --post-line-color: #ccc;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #878A8C;
+  position: absolute;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.create-post-heading{
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #1c1c1c;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.btnCreatePost{
+  background-color: #4383af;
+  border-color: #4383af;
+  color: aliceblue;
+  fill: #4383af;
+  border: 1px solid;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  opacity: 1;
+  width: 100px;
+  height: 34px;
+}
+
+.btnDiscard{
+  fill: #4383af;
+  border: 1px solid;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  opacity: 1;
+  width: 100px;
+  height: 34px;
+  margin-top: 5px;
+  color: #4383af;
+  background-color: transparent;
+}
+
+.float-right{
+  float: right;
+}

@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <hr />
-    <div class="create-post-container col-md-9">
+    <div class="create-post-container col-md-6">
       <form class="post-form" [formGroup]="createPostForm" (ngSubmit)="createPost()">
         <div class="form-group">
-          <div class="create-post-heading">Create Post</div>
+          <div class="create-post-heading">Dodaj Post</div>
           <hr />
           <input type="text" [formControlName]="'postName'" class="form-control" style="margin-top: 5px"
-                 placeholder="Title">
+                 placeholder="Tytuł">
 
           <input type="text" class="form-control" [formControlName]="'url'" style="margin-top: 5px" placeholder="URL">
 
           <select class="form-control" style="margin-top: 10px" [formControlName]="'tagName'">
-            <option value="" selected disabled>Select Tag</option>
+            <option value="" selected disabled>Wybierz Tag</option>
             <option *ngFor="let tag of tags">{{tag.name}}</option>
           </select>
 
@@ -31,8 +31,8 @@
                     }"></editor>
           <span>
             <div style="margin-top: 5px" class="float-right">
-              <button (click)="discardPost()" class="btnDiscard">Discard</button>
-              <button class="btnCreatePost">Post</button>
+              <button (click)="discardPost()" class="btnDiscard">Anuluj</button>
+              <button class="btnCreatePost">Dodaj</button>
             </div>
           </span>
         </div>

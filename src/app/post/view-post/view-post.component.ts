@@ -35,6 +35,9 @@ export class ViewPostComponent implements OnInit {
       postId: this.postId
     };
     this.isLoggedIn = this.authService.isLoggedIn();
+    this.postService.getAllPosts().subscribe(post => {
+      this.side=post;
+    })
   }
 
   ngOnInit(): void {

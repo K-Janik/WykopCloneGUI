@@ -11,8 +11,8 @@
       <a class="postname" (click)="goToPost(post.id)">{{post.postName}}</a>
     </div>
             <span class="tag-info">
-              <span>@<a class="username" routerLink="/user/{{post.userName}}">{{post.userName}}</a></span>
-              <span class="tag-text"> #<a class="tagname" routerLink="">{{post.tagName}}</a></span>
+              <span>@<a class="username" routerLink="/user/{{post.userName}}">{{post.userName}} </a></span>
+              <span class="tag-text"><a class="tagname" routerLink="">{{post.tagName}}</a></span>
             </span>
     <div>
       <p class="post-text" (click)="goToPost(post.id)" [innerHTML]="post.description"></p>

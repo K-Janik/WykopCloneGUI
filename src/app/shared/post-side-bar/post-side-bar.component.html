@@ -2,7 +2,7 @@
 <div class="title">OSTATNIO POPULARNE</div>
   <hr class="top-margin" />
   <span class="row post" *ngFor="let post of sides | orderBy: 'voteCount' :'desc'">
-      <span class="postname">{{post.postName}} </span>
+      <span class="postname" (click)="goToPost(post.id)">{{post.postName}} </span>
       <span class="counter">{{post.voteCount}}</span>
       <span><hr /></span>
 </span>

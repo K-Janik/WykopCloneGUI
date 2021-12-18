@@ -1,27 +1,34 @@
-# WykopCloneGUI
+# WykopClone Frontend Layer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+> This is a clone of popular polish community website Wykop.pl. Application is using different Spring Technologies (listed below) for backend layer. Frontend side 
+is coded in Angular CLI with Bootstrap framework.
 
-## Development server
+## Video:
+```diff
+-Click image below to see video demo! 
+```
+[![Watch the video](https://imgupload.pl/images/2021/12/18/WykopClone.png)](https://streamable.com/tzuwrl)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Technologies Used
+- Spring Boot 2 - version 2.5.3;
+- Spring Web;
+- Spring Secutity with JWT Authentication (JSON Web Token);
+- Java Keystore;
+- Spring Data JPA- Hibernate;
+- PostgreSQL;
+- DockerDB;
+- DTO Pattern;
+- Lombok;
+- Angular CLI - version 11.2.13;
+- Bootstrap 5;
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Features
+- New User registration activated via email;
+- Login API using JWT Authentication (JSON Web Token);
+- AsymmetricEncryption using Java Keystore;
+- Refresh Token;
+- Adding posts (only for signed Users);
+- Adding tags (only for signed Users);
+- Adding comments (only for signed Users);
+- Voting only for signed Users;
+- Email notification about comment on User post;
